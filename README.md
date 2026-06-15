@@ -48,6 +48,41 @@ O crescimento da vegetacao tambem muda conforme o ambiente:
 - `MotorPrioridade`: classe que aplica as regras de decisao.
 - `RelatorioPrioridade`: imprime o resultado no console.
 
+## Estrutura do codigo
+
+```text
+src/br/com/motiva
+|-- app
+|   `-- Main.java
+|-- dominio
+|   |-- MonitoravelViaIoT.java
+|   |-- TrechoMonitoradoIoT.java
+|   `-- TrechoRodovia.java
+|-- intervencao
+|   |-- IntervencaoOperacional.java
+|   |-- Pulverizacao.java
+|   |-- RocadaManual.java
+|   `-- RocadaMecanizada.java
+|-- motor
+|   |-- ItemRelatorioPrioridade.java
+|   |-- MotorPrioridade.java
+|   `-- RelatorioPrioridade.java
+`-- testes
+    `-- TesteMotorPrioridade.java
+```
+
+## Onde cada requisito foi implementado
+
+- Classe abstrata: `IntervencaoOperacional`.
+- Metodo abstrato: `executarServico(TrechoRodovia trecho)`.
+- Intervencoes concretas: `RocadaMecanizada`, `RocadaManual` e `Pulverizacao`.
+- Interface IoT: `MonitoravelViaIoT`.
+- Trecho com tecnologia IoT: `TrechoMonitoradoIoT`.
+- Crescimento diferente por ambiente: metodo `calcularCrescimentoDiarioCm()` em `TrechoRodovia`.
+- Motor que percorre array de trechos: metodo `gerarRelatorio()` em `MotorPrioridade`.
+- Relatorio automatico: `RelatorioPrioridade`.
+- Testes manuais: `TesteMotorPrioridade`.
+
 ## Como compilar
 
 No PowerShell, dentro da pasta do projeto:
