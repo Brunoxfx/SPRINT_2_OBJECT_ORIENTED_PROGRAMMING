@@ -18,6 +18,11 @@ public class TrechoMonitoradoIoT extends TrechoRodovia implements MonitoravelVia
     }
 
     @Override
+    public void atualizarPorMonitoramento() {
+        this.transmitirDadosSensor();
+    }
+
+    @Override
     public double transmitirDadosSensor() {
         // A leitura do sensor atualiza automaticamente a altura da vegetacao.
         this.atualizarAlturaVegetacao(this.ultimaLeituraSensorCm);

@@ -46,6 +46,10 @@ public class TrechoRodovia {
         return "KM " + this.kmInicial + " ao KM " + this.kmFinal;
     }
 
+    public void atualizarPorMonitoramento() {
+        // Trechos sem sensor nao precisam atualizar dados automaticamente.
+    }
+
     public void atualizarAlturaVegetacao(double novaAlturaCm) {
         this.setAlturaVegetacaoCm(novaAlturaCm);
     }

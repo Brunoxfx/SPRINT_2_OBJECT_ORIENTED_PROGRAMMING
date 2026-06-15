@@ -1,6 +1,5 @@
 package br.com.motiva.motor;
 
-import br.com.motiva.dominio.MonitoravelViaIoT;
 import br.com.motiva.dominio.TrechoRodovia;
 import br.com.motiva.intervencao.IntervencaoOperacional;
 import br.com.motiva.intervencao.Pulverizacao;
@@ -15,11 +14,8 @@ public class MotorPrioridade {
         for (int i = 0; i < trechos.length; i++) {
             TrechoRodovia trecho = trechos[i];
 
-            // Se o trecho tiver IoT, os dados do sensor entram antes da decisao.
-            if (trecho instanceof MonitoravelViaIoT) {
-                MonitoravelViaIoT monitoravel = (MonitoravelViaIoT) trecho;
-                monitoravel.transmitirDadosSensor();
-            }
+            // O polimorfismo permite que trechos com IoT atualizem o sensor.
+            trecho.atualizarPorMonitoramento();
 
             itens[i] = this.avaliarTrecho(trecho);
         }

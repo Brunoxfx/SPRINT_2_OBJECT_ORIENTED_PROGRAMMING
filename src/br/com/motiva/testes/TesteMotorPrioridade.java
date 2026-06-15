@@ -2,8 +2,6 @@ package br.com.motiva.testes;
 
 import br.com.motiva.dominio.MonitoravelViaIoT;
 import br.com.motiva.dominio.TrechoRodovia;
-import br.com.motiva.intervencao.RocadaManual;
-import br.com.motiva.intervencao.RocadaMecanizada;
 import br.com.motiva.motor.ItemRelatorioPrioridade;
 import br.com.motiva.motor.MotorPrioridade;
 
@@ -77,7 +75,7 @@ public class TesteMotorPrioridade {
                 TrechoRodovia.RISCO_ALTO);
         ItemRelatorioPrioridade item = motor.avaliarTrecho(trecho);
 
-        return item.getIntervencao() instanceof RocadaManual;
+        return "Rocada manual".equals(item.getIntervencao().getNome());
     }
 
     private static boolean testarRocadaMecanizadaParaRiscoBaixo() {
@@ -86,7 +84,7 @@ public class TesteMotorPrioridade {
                 TrechoRodovia.RISCO_BAIXO);
         ItemRelatorioPrioridade item = motor.avaliarTrecho(trecho);
 
-        return item.getIntervencao() instanceof RocadaMecanizada;
+        return "Rocada mecanizada".equals(item.getIntervencao().getNome());
     }
 
     private static boolean testarArrayDeTrechos() {
