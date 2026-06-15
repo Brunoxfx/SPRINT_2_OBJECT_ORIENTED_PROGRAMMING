@@ -85,6 +85,8 @@ src/br/com/motiva
 
 ## Como compilar
 
+O projeto foi compilado e testado com Java 21.
+
 No PowerShell, dentro da pasta do projeto:
 
 ```powershell
