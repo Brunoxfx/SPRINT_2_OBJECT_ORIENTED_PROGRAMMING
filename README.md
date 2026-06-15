@@ -79,7 +79,3 @@ Porque a equipe precisa saber qual servico sera feito. Uma intervencao generica 
 ### Qual a diferenca entre classe abstrata e interface?
 
 Classe abstrata e usada quando existe uma base comum entre classes da mesma familia. Interface e usada quando classes diferentes precisam seguir o mesmo contrato de comportamento. Neste projeto, as intervencoes compartilham a base `IntervencaoOperacional`, enquanto o monitoramento por IoT fica em uma interface porque pode ser implementado por qualquer classe que transmita dados de sensor.
-
-## Observacao sobre GitHub
-
-O projeto esta pronto para ser enviado ao GitHub. Como o repositorio local ainda nao possui um `origin`, nenhum remoto foi configurado automaticamente.
