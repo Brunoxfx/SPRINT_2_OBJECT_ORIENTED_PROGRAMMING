@@ -9,6 +9,7 @@ import br.com.motiva.motor.MotorPrioridade;
 
 public class TesteMotorPrioridade {
     public static void main(String[] args) {
+        // Testes manuais simples, sem JUnit, para manter Java puro.
         int testesExecutados = 0;
         int testesComSucesso = 0;
 

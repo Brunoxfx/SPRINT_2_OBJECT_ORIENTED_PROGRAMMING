@@ -11,9 +11,11 @@ public class MotorPrioridade {
     public ItemRelatorioPrioridade[] gerarRelatorio(TrechoRodovia[] trechos) {
         ItemRelatorioPrioridade[] itens = new ItemRelatorioPrioridade[trechos.length];
 
+        // Varre o array de trechos, como pedido na entrega da Sprint.
         for (int i = 0; i < trechos.length; i++) {
             TrechoRodovia trecho = trechos[i];
 
+            // Se o trecho tiver IoT, os dados do sensor entram antes da decisao.
             if (trecho instanceof MonitoravelViaIoT) {
                 MonitoravelViaIoT monitoravel = (MonitoravelViaIoT) trecho;
                 monitoravel.transmitirDadosSensor();
@@ -30,6 +32,7 @@ public class MotorPrioridade {
         IntervencaoOperacional intervencao;
         String motivo;
 
+        // Regra principal: altura da vegetacao e risco definem a intervencao.
         if (altura >= 80.0 && trecho.isRiscoAlto()) {
             intervencao = new RocadaManual();
             motivo = "Vegetacao alta em area com risco operacional alto.";

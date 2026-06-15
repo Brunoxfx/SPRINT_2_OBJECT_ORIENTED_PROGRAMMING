@@ -2,6 +2,7 @@ package br.com.motiva.intervencao;
 
 import br.com.motiva.dominio.TrechoRodovia;
 
+// Classe base: define o que toda intervencao operacional precisa ter.
 public abstract class IntervencaoOperacional {
     private String nome;
 
@@ -13,6 +14,7 @@ public abstract class IntervencaoOperacional {
         return this.nome;
     }
 
+    // Cada filha decide como o servico sera executado no trecho.
     public abstract void executarServico(TrechoRodovia trecho);
 
     private void setNome(String nome) {

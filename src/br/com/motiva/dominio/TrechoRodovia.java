@@ -56,11 +56,13 @@ public class TrechoRodovia {
             return;
         }
 
+        // A taxa de crescimento depende do tipo de ambiente do trecho.
         double crescimento = this.calcularCrescimentoDiarioCm() * dias;
         this.setAlturaVegetacaoCm(this.alturaVegetacaoCm + crescimento);
     }
 
     public double calcularCrescimentoDiarioCm() {
+        // Trechos umidos acumulam vegetacao mais rapido.
         if (AMBIENTE_UMIDO.equalsIgnoreCase(this.tipoAmbiente)) {
             return 3.0;
         }

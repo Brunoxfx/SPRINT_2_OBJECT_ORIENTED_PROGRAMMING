@@ -7,6 +7,7 @@ public class RelatorioPrioridade {
     public void imprimir(ItemRelatorioPrioridade[] itens) {
         System.out.println("=== Relatorio de Prioridade ===");
 
+        // Mostra cada decisao tomada pelo motor para facilitar a avaliacao.
         for (int i = 0; i < itens.length; i++) {
             ItemRelatorioPrioridade item = itens[i];
             TrechoRodovia trecho = item.getTrecho();
